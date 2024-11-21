@@ -1,34 +1,32 @@
+import React , {Suspense , lazy} from "react";
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import SettingsPage from './pages/SettingsPage';
 import NotFound from './pages/NotFound';
 import Contacts from './pages/Contacts';
-import FormPage from './pages/FormPage';
 import "./App.css";
 
-const IdPage = () => {
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+const FormPage = lazy(() => import("./pages/FormPage"));
+const UserProfile = lazy(() => import("./pages/UserProfile"))
 
-  const {id} = useParams()
 
-  return (
-    <h1>{id}</h1>
-  )
-}
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
+     <Suspense fallback={<div>Loading.......</div>}>
+     <Routes>
+        <Route path="/" element={<HomePage/>}  />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path='/contacts' element={<Contacts/>}/>
         <Route path='/form' element={<FormPage/>}/>
-        <Route path='/tasks/:id' element={<IdPage/> }/>
+        <Route path="/userprofile" element={<UserProfile/>}  />
         
         <Route path="*" element={<NotFound />} />
       </Routes>
+     </Suspense>
     </BrowserRouter>
   );
 }
