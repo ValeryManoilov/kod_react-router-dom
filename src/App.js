@@ -12,6 +12,25 @@ const FormPage = lazy(() => import("./pages/FormPage"));
 const UserProfile = lazy(() => import("./pages/UserProfile"))
 
 
+const Paramspage = () => {
+
+  const {id} = useParams()
+
+  return (
+    <div>User - {id}</div>
+  )
+}
+
+
+const ProductPage = () => {
+
+  const {id , category} = useParams()
+
+  return (
+    <div>User - {id} {category}</div>
+  )
+}
+
 
 function App() {
   return (
@@ -25,6 +44,9 @@ function App() {
         <Route path='/form' element={<FormPage/>}/>
         <Route path="/userprofile" element={<UserProfile/>}  />
         <Route path="/home/:id/:name" element={<UsersPage/>}/>
+        <Route path="/user/:id" element={<Paramspage/>} />
+        <Route path="/user/:id/:category" element={<ProductPage/>} />
+
         
         <Route path="*" element={<NotFound />} />
       </Routes>
