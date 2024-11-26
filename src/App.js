@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import Contacts from './pages/Contacts';
 import "./App.css";
+import UsersPage from "./pages/UsersPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -23,6 +24,7 @@ function App() {
         <Route path='/contacts' element={<Contacts/>}/>
         <Route path='/form' element={<FormPage/>}/>
         <Route path="/userprofile" element={<UserProfile/>}  />
+        <Route path="/home/:id/:name" element={<UsersPage/>}/>
         
         <Route path="*" element={<NotFound />} />
       </Routes>
