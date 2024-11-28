@@ -9,7 +9,6 @@ function SettingsPage() {
             height: "100vh",
             background: "blue"
         }}>
-            <Header />
             SettingsPage</div>
     )
 }

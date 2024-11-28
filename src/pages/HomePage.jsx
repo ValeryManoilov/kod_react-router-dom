@@ -56,7 +56,6 @@ function HomePage() {
             height: "100vh",
 
         }}>
-            <Header />
             <br />
             <br />
             <br />

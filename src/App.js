@@ -4,6 +4,8 @@ import NotFound from './pages/NotFound';
 import Contacts from './pages/Contacts';
 import "./App.css";
 import UsersPage from "./pages/UsersPage";
+import Header from "./components/Header";
+import Buttonback from "./components/Buttonback";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -36,6 +38,8 @@ function App() {
   return (
     <BrowserRouter>
      <Suspense fallback={<div>Loading.......</div>}>
+      <Header/>
+
      <Routes>
         <Route path="/" element={<HomePage/>}  />
         <Route path="/about" element={<AboutPage />} />
@@ -47,11 +51,14 @@ function App() {
         <Route path="/user/:id" element={<Paramspage/>} />
         <Route path="/user/:id/:category" element={<ProductPage/>} />
 
-        
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Buttonback/>
      </Suspense>
+
+
     </BrowserRouter>
+
   );
 }
 

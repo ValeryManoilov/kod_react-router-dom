@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import "./style.css";
 
 function Header() {
+
+    const location = useLocation();
+
     return (
         <header>
             <nav >
@@ -17,22 +22,22 @@ function Header() {
                     }}
                 >
                     <li>
-                        <Link to="/">Главная</Link>
+                        <Link style={location.pathname == "/" ? { color: "red" } : {}} to="/">Главная</Link>
                     </li>
                     <li>
-                        <Link to="/about">О нас</Link>
+                        <Link style={location.pathname == "/about" ? { color: "red" } : {}} to="/about">О нас</Link>
                     </li>
                     <li>
-                        <Link to="/settings">Settings</Link>
+                        <Link style={location.pathname == "/settings" ? { color: "red" } : {}} to="/settings">Settings</Link>
                     </li>
                     <li>
-                        <Link to="/contacts">Contacts</Link>
+                        <Link style={location.pathname == "/contacts" ? { color: "red" } : {}} to="/contacts">Contacts</Link>
                     </li>
                     <li>
-                        <Link to="/form">From</Link>
+                        <Link style={location.pathname == "/form" ? { color: "red" } : {}} to="/form">From</Link>
                     </li>
                     <li>
-                        <Link to="/hasljdakjdhkjadhajsdhajksdhkjasdh">wrong page</Link>
+                        <Link style={location.pathname == "/hasljdakjdhkjadhajsdhajksdhkjasdh" ? { color: "red" } : {}} to="/hasljdakjdhkjadhajsdhajksdhkjasdh">wrong page</Link>
                     </li>
                 </ul>
             </nav>

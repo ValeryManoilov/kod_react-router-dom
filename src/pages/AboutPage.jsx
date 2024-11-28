@@ -9,7 +9,6 @@ function AboutPage() {
             height: "100vh",
             background: "green"
         }}>
-            <Header />
             AboutPage</div>
     )
 }
