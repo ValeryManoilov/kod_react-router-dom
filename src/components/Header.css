@@ -1,0 +1,29 @@
+header
+{
+    padding: 20px 0 20px 0;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    background: white;
+    color: black;
+    font-size: 24px;
+}
+
+li
+{
+    list-style-type: none;
+}
+
+li:active
+{
+    color: red;
+}
+
+li:hover{
+    border-bottom: 1px solid black;
+}

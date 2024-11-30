@@ -1,38 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "./Header.css"
+import styled from 'styled-components'
+
+const HeaderLink = styled(Link)`
+    text-decoration: none;
+    & ::marker {
+        list-style-type: none;
+    }
+`
 
 function Header() {
     return (
         <header>
-            <nav >
-                <ul
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: "40px",
-                        background: "white",
-                        color: "black",
-                        fontSize: "24px"
-                    }}
-                >
+            <nav>
+                <ul>
                     <li>
-                        <Link to="/">Главная</Link>
+                        <HeaderLink to="/">Главная</HeaderLink>
                     </li>
                     <li>
-                        <Link to="/about">О нас</Link>
+                        <HeaderLink to="/about">О нас</HeaderLink>
                     </li>
                     <li>
-                        <Link to="/settings">Settings</Link>
+                        <HeaderLink to="/settings">Настройки</HeaderLink>
                     </li>
                     <li>
-                        <Link to="/contacts">Contacts</Link>
+                        <HeaderLink to="/contacts">Контакты</HeaderLink>
                     </li>
                     <li>
-                        <Link to="/form">From</Link>
+                        <HeaderLink to="/form">Форма</HeaderLink>
                     </li>
                     <li>
-                        <Link to="/hasljdakjdhkjadhajsdhajksdhkjasdh">wrong page</Link>
+                        <HeaderLink to="/auth">Авторизация</HeaderLink>
+                    </li>
+                    <li>
+                        <HeaderLink to="/hasljdakjdhkjadhajsdhajksdhkjasdh">404</HeaderLink>
                     </li>
                 </ul>
             </nav>
